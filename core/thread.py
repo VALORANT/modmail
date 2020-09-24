@@ -820,7 +820,7 @@ class Thread:
         elif note:
             embed.colour = self.bot.main_color
         else:
-            embed.set_footer(text=f"Message ID: {message.id}")
+            embed.set_footer(text=f"Message ID: https://discordapp.com/channels/@me/{message.channel.id}/{message.id}")
             embed.colour = self.bot.recipient_color
 
         if from_mod or note:
@@ -986,7 +986,7 @@ class ThreadManager:
         # Schedule thread setup for later
         cat = self.bot.main_category
         if category is None and len(cat.channels) == 50:
-            fallback_id = self.bot.config["fallback_category_id"]
+            fallback_id = "702955799630184498"
             if fallback_id:
                 fallback = discord.utils.get(cat.guild.categories, id=int(fallback_id))
                 if fallback and len(fallback.channels) != 50:
